@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    meta(charset="UTF-8")
+    title Список пользователей
+    link(rel="stylesheet" href="/styles.css")
+  body
+    .container
+      h1 Список пользователей
+      
+      if users && users.length > 0
+        table(border="1" cellpadding="10" cellspacing="0")
+          thead
+            tr
+              th ID
+              th Имя
+              th Email
+          tbody
+            each user in users
+              tr
+                td= user.id
+                td= user.name
+                td= user.email
+      else
+        p Пользователей пока нет
+      
+      br
+      a(href="/users/create") Создать нового пользователя
